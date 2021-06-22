@@ -182,6 +182,7 @@ function showList(e) {
 
 /* 當點擊到指定古蹟，map就會跳轉過去 */
 function matchToMap(e) {
+    e.preventDefault();
     for (let x = 0; data.length > x; x++) {
         if (e.target.dataset.title == data[x]["caseName"]) {
             map.setView([data[x]["latitude"], data[x]["longitude"]], 20);
