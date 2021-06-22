@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>展覽地圖</title>
+    <link href="style/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.css">
+    </link>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.Default.css">
+    <link rel="stylesheet" href="style/custom.css">
+</head>
+
+<body>
+    <div class="d-flex">
+        <section class="sideLeft">
+            <div class="exhibitionSelect mb-1 pb-1">
+                <select name="" id="selectArea">
+                    <option>- 選擇縣市 -</option>
+                </select>
+            </div>
+            <div class="exhibitionList">
+                <p class="noticeTxt p-0 m-0 text-center"></p>
+                <ul class="m-0 p-0">
+                </ul>
+            </div>
+        </section>
+        <section class="sideRight">
+            <div id="map"></div>
+        </section>
+    </div>
+    <footer class="footer">
+        <div class="d-flex">
+            <div class="Block--6">
+                <p class="m-0 color-white">最後更新時間 : <span class="timeData"></span></p>
+            </div>
+            <div class="Block--6 text-right">
+                <p class="m-0 color-white">資料來源 : <a href="https://data.gov.tw/" target="_blank" class="color-white" style="text-decoration: underline;">政府資料開放平臺</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js"></script>
+    <script type="text/javascript" src="js/test.js"></script>
+</body>
+
+</html>
