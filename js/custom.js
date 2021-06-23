@@ -73,6 +73,7 @@ function showMap() {
         shadowSize: [41, 41]
     });
 
+
     /* 把json資料渲染到地圖上 */
     for (let f = 0; data.length > f; f++) {
         L.marker([data[f]["latitude"], data[f]["longitude"]], { icon: greenIcon })
@@ -80,8 +81,11 @@ function showMap() {
             .bindPopup(
                 `
                 <div class="descBox">
+                    <div class="image mb-1">
+                        <img src="${data[f]["representImage"]}" alt="">
+                    </div>
                     <div class="title mb-1">
-                    ${data[f]["caseName"]}
+                        ${data[f]["caseName"]}
                     </div>
                     <div class="time position-relative pl-2">
                         <i class="fas fa-clock position-absolute top-5 left-0" style="color: #0ba29c;"></i>
@@ -176,7 +180,7 @@ function showList(e) {
 
     }
     exhibitionList.innerHTML = str;
-    
+
 }
 
 
