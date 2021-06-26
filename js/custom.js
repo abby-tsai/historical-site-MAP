@@ -73,7 +73,6 @@ xhr.onload = function () {
 
 	for (let f = 0; data.length > f; f++) {
 
-		console.log(data[f]["caseName"])
 		/* 因為資料有些經緯度是null，會報錯。所以設定 : 如果經度 & 緯度都有值，才跑下面的內容 */
 		if (data[f]["latitude"] && data[f]["longitude"]) {
 
