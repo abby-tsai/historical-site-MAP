@@ -55,17 +55,20 @@ xhr.onload = function () {
 		center: [data[0]["latitude"], data[0]["longitude"]],
 		zoom: 18
 	});
+	
 	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 	}).addTo(map);
-	let greenIcon = new L.Icon({
-		iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png",
+
+	let redIcon = new L.Icon({
+		iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png",
 		shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
 		iconSize: [25, 41],
 		iconAnchor: [12, 41],
 		popupAnchor: [1, -34],
 		shadowSize: [41, 41]
 	});
+
 	let markers = new L.MarkerClusterGroup().addTo(map);;
 
 	for (let f = 0; data.length > f; f++) {
@@ -73,7 +76,7 @@ xhr.onload = function () {
 		/* 因為資料有些經緯度是null，會報錯。所以設定 : 如果經度 & 緯度都有值，才跑下面的內容 */
 		if (data[f]["latitude"] && data[f]["longitude"]) {
 
-			markers.addLayer(L.marker([data[f]["latitude"], data[f]["longitude"]], { icon: greenIcon }))
+			markers.addLayer(L.marker([data[f]["latitude"], data[f]["longitude"]], { icon: redIcon }))
 				.addTo(map)
 				.bindPopup(
 					`
