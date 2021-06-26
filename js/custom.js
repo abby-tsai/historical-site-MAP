@@ -69,14 +69,16 @@ xhr.onload = function () {
 		shadowSize: [41, 41]
 	});
 
-	let markers = new L.MarkerClusterGroup().addTo(map);;
+	let markers = new L.MarkerClusterGroup().addTo(map);
 
 	for (let f = 0; data.length > f; f++) {
 
+		console.log(data[f]["caseName"])
 		/* 因為資料有些經緯度是null，會報錯。所以設定 : 如果經度 & 緯度都有值，才跑下面的內容 */
 		if (data[f]["latitude"] && data[f]["longitude"]) {
 
-			markers.addLayer(L.marker([data[f]["latitude"], data[f]["longitude"]], { icon: redIcon }))
+			markers.addLayer(
+				L.marker([data[f]["latitude"], data[f]["longitude"]], { icon: redIcon })
 				.addTo(map)
 				.bindPopup(
 					`
@@ -101,11 +103,12 @@ xhr.onload = function () {
 						</div>
 					</div>
 					`
-				);
+				)
+			)
 		}
+
 	}
 	map.addLayer(markers);
-
 
 
 	/* 當點擊到指定古蹟，map就會跳轉過去 */
